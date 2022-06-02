@@ -9,7 +9,7 @@
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
       $receiver = "kaltoum.adnane@gmail.com"; 
       $subject = "From: $nom <$email>";
-      $body = "nom: $nom\nEmail: $email\n\nProjet:\n$projet\n\nRegards,\n$nom";
+      $body = "Nom: $nom\nEmail: $email\n\nProjet:\n$projet\n\nRegards,\n$nom";
       $sender = "From: $email";
       if(mail($receiver, $subject, $body, $sender)){
          echo "Votre projet est bien envoyer";

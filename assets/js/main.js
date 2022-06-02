@@ -156,6 +156,6 @@ form.onsubmit = (e) => {
       // form.classList.remove('disabled');
     }
   };
-  let formData = new FormData(form); //creating new formData obj. This obj is used to send from data
-  xhr.send(formData); //sending form data
+  let formData = new FormData(form);
+  xhr.send(formData);
 };
