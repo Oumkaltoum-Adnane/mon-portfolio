@@ -680,7 +680,7 @@ body.light-theme {
   resize: none;
 }
 .button_send {
-  margin-left: 8rem;
+  margin-left: 12rem;
 }
 /*=============== FOOTER ===============*/
 .footer {
@@ -928,7 +928,9 @@ body.light-theme {
     margin-bottom: 0.5rem;
   }
   .contact__container {
-    column-gap: 6rem;
+    grid-template-columns: repeat(2, 460px);
+    justify-content: center;
+    column-gap: 5rem;
   }
   .footer__social-link {
     font-size: 1.25rem;
