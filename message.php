@@ -1,24 +1,27 @@
 <?php
-  $name = htmlspecialchars($_POST['name']);
+
+//get all form values
+  $nom = htmlspecialchars($_POST['nom']);
   $email = htmlspecialchars($_POST['email']);
-  $phone = htmlspecialchars($_POST['phone']);
-  $website = htmlspecialchars($_POST['website']);
-  $message = htmlspecialchars($_POST['message']);
-  if(!empty($email) && !empty($message)){
+  $projet = htmlspecialchars($_POST['projet']);
+ 
+  if(!empty($email) && !empty($projet)){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-      $receiver = "receiver_email_address"; //enter that email address where you want to receive all messages
-      $subject = "From: $name <$email>";
-      $body = "Name: $name\nEmail: $email\nPhone: $phone\nWebsite: $website\n\nMessage:\n$message\n\nRegards,\n$name";
+      $receiver = "kaltoum.adnane@gmail.com"; 
+      $subject = "From: $nom <$email>";
+      $body = "nom: $nom\nEmail: $email\n\nProjet:\n$projet\n\nRegards,\n$nom";
       $sender = "From: $email";
       if(mail($receiver, $subject, $body, $sender)){
-         echo "Your message has been sent";
+         echo "Votre projet est bien envoyer";
       }else{
-         echo "Sorry, failed to send your message!";
+         echo "Désolé, message non envoyer";
       }
-    }else{
-      echo "Enter a valid email address!";
+    }
+    else{
+      echo" merci de renseigner un email valide ";
     }
   }else{
-    echo "Email and message field is required!";
+    echo"Merci de remplir tous les champs";
   }
+  
 ?>
